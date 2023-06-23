@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<title>{% block title %} Bienvenue sur CarForSale {% endblock%}</title>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">  
+
+<header>
+
+<!-- Fin NavBar--->
+<div class="container-fluid card-container" id="scrollspyHeading1">
+	<div class="card ms-3 me-3">
+		<div class="row g-0 h-100">
+			<div class="col-md-6">
+				<div class="card-body">
+					<h5 class="card-title ">Bienvenue chez <span class="">CarForSale</span></h5>
+					<p class="card-text">Nous sommes une structure spécialisée dans les services de vente en ligne . <br>
+						Nous mettons à la disposition de nos clients une plétore de véhicule resolvant les attentes de tout un chacun. <br>
+						Nous sommes aussi ouvert aux entreprises qui souhaitent multiplier leurs stratégies de commerce.
+					</p>
+					<p class="card-title ">
+						<a href="https://api.whatsapp.com/send?phone=237691390316" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp icon-color ms-3"></i></a>
+						<a href="mailto;kydlaugan71@gmail.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope-at-fill icon-color ms-3"></i></a>
+						<a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter icon-color ms-3"></i></a>
+						<a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-github icon-color ms-3"></i></a>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-6 card-container-img">
+				 <img src="{% static 'image/car1.png' %}" class="img-fluid w-75  h-100 zoomInDown" alt="..."> 
+
+			<!--	<div id="carouselExampleIndicators" class="carousel slide">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="{% static 'image/pub1.png' %}" class=" w-100 img-thumbnail " alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="{% static 'image/pub1.png' %}" class=" w-100 img-thumbnail " alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="{% static 'image/pub1.png' %}" class=" w-100 img-thumbnail" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+					</button>
+				</div>   --->
+
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+
+</header>
+
+<div class="card text-center mt-4">
+	<div class="card-body">
+		<h5 class="card-title fs-2 text-decoration-underline mt-3 text-danger">Decouvrez Nos Services </h5>
+		<p class="card-text text-capitalize">Vous avez des véhicule à promouvoir , nous sommes là pour vous .</p>
+	</div>
+</div>
+
+<!-- Debut Services --->
+
+<div class="container-fluid mt-2">
+	<div class="container-fluid row">
+		<div class="col-sm-4  mb-sm-0 ">
+			<div class="card text-center border-danger rounded-5">
+				<div class="card-body mb-2">
+					<h5 class="card-title text-center">Fournisseurs </h5>
+					<p class="card-text">Connectez-vous pour mettre vos véhicules  en ventes  <br> .</p>
+					<a href="#" class="btn btn-success">S'incrire </a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="card text-center border-danger rounded-5">
+				<div class="card-body mb-2">
+					<h5 class="card-title text-center">Clients</h5>
+					<p class="card-text">Connectez-vous pour contacter nos fournisseurs et recevoir vos véhicules.</p>
+					<a href="#" class="btn btn-success text-center">S'inscire</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="card text-center border-danger rounded-5">
+				<div class="card-body mb-2">
+					<h5 class="card-title text-center">Visiteurs</h5>
+					<p class="card-text">Consulter nos gammes variés  de  véhicules  <br>  .</p>
+					<a href="liste/" class="btn btn-success text-center">Nos articles </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card text-center mt-4">
+	<div class="card-body">
+		<h5 class="card-title fs-2 text-decoration-underline mt-3 text-danger">Nos Articles  </h5>
+		<p class="card-text text-capitalize">Visitez notre garderie et vous ne serez pas decu .</p>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<div id="carouselExampleIndicators" class=" carousel slide publicite">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active rounded-circle p-1" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="rounded-circle p-1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" class="rounded-circle p-1"></button>
+				</div>
+				<div class="carousel-inner publicite ">
+					<div class="carousel-item active">
+						<img src="{% static 'image/pub1.png'%}" class="img-fluid  publicite w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{% static 'image/pub2.png'%}" class="img-fluid publicite  w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{% static 'image/pub3.png'%}" class="img-fluid publicite w-100" alt="...">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+	
+	
+	
+
+
+<script src="{% static 'js/index.js' %}"></script>   
+{% endblock content %}

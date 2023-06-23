@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'police_1';
+    src: url('../police/K22_Lawenta.otf');
+}
+
+@font-face {
+    font-family: 'police_2';
+    src: url('../police/Creepster-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'police_3';
+    src: url('../police/KaushanScript-Regular.ttf');
+}
+
+*{
+    box-sizing: border-box;
+}
+:root{
+    --PrimaryColor : #FF2626;
+    
+}
+
+.img_contenu{
+    border: 2px solid var(--PrimaryColor) !important;
+    height: 400px !important;
+    border-radius: 10%;
+    box-shadow: -10px 15px 20px 0px gray
+}
+
+.img_contenus{
+    height: 80px !important;
+    box-shadow: -10px 15px 20px 0px gray
+}
+
+
+.affiche{
+    height: 300px;
+    margin-top: 10%;
+
+}
+
+.nom_voiture{
+    font-family: 'police_1';
+    font-size: 30px;
+}
+.vitesse{
+    font-family: 'police_2';
+    font-size: 40px;
+
+}
+.infos_voiture{
+    font-family: 'police_2';
+    font-size: 20px;
+
+}
+
+.infos_2{
+    font-family: 'police_3';
+    font-size: 25px;
+}
+
+.nom_voitures{
+    font-family: 'police_1';
+    font-size: 30px;
+}
+
+.vitesses{
+    font-family: 'police_2';
+    font-size: 25px;
+
+}

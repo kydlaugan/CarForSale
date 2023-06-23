@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<title>{% block title %}  Ajouter un  véhicule {% endblock%}</title>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">  
+<link rel="stylesheet" href="{% static 'css/liste.css' %}">  
+<link rel="stylesheet" href="{% static 'css/creation.css' %}">  
+
+
+
+<div class="container ms-5">
+    <div class="card">
+        <form action="" enctype="multipart/form-data" method="POST" action="{{f.id}}">
+            {% csrf_token %}
+            <div class="form">
+                <div class="right-side">
+                    <div class="main active">
+                        <small><i class="fa fa-smile-o"></i></small>
+                        <div class="text">
+                            <h4>Bienvenue Chez CareForSale</h4>
+                            <p>Enregistez vos véhicule un rien de temps.</p>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="text" required require id="user_name" name="marque">
+                                <span>Marque</span>
+                            </div>
+                            <div class="input-div"> 
+                                <input type="text" required require  name="modele">
+                                <span>Modele</span>
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="text" required require name="num_chassis">
+                                <span>N° Chassis</span>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" required require name="carburant">
+                                <span>Carburant</span>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="number" required require name="kilometrage">
+                                <span>Kilometrage en km/h</span>
+                            </div>
+                            <div class="input-div">
+                                <input type="number" required require name="puissance">
+                                <span>Puissance en CV</span>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="number" required require name="prix">
+                                <span>Prix  en CFA</span>
+                            </div>
+                            <div class="input-div">
+                                <input type="number" required require name="etat">
+                                <span>Etat sur 10</span>
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="file" required require name="img1">
+                            </div>
+                            <div class="input-div">
+                                <input type="file" required require name="img2">
+                            </div>
+                        </div>
+
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="file" required require name="img3">
+                            </div>
+                            <div class="input-div">
+                                <input type="file" required require name="img4">
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="text" required require name="description">
+                                <span>Description</span>
+                            </div>
+                        </div>
+
+
+                        <div class="buttons ms-5">
+                            <button type="submit" class="next_button ms-5">Modifier</button>
+                        </div>
+                    </div>
+                             
+
+                </div>
+            </div>
+
+    </form> 
+
+    </div>
+</div>
+
+
+
+<script src="{% static 'js/index.js' %}"></script>   
+{% endblock content %}

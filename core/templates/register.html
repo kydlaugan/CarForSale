@@ -1,0 +1,54 @@
+{% extends "base2.html" %}
+{% load static%}
+{%block content%}
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
+                <div class="card my-3">
+        
+                  <form class="card-body cardbody-color p-lg-5" method="post">
+                    {% csrf_token %}
+        
+                    <div class="text-center contain_img">
+                      <img src="{% static 'image/logo.png'%}" class="profile-image-pic img-thumbnail rounded-circle my-3"  alt="profile">
+                    </div>
+        
+                    <div class="mb-2">
+                      <input type="text" class="form-control" id="Username" name="nom" aria-describedby="emailHelp"
+                        placeholder="User Name" required>
+                    </div>
+					<div class="mb-2">
+						<input type="text" class="form-control" id="Username" name="adresse" aria-describedby="emailHelp"
+						  placeholder="Adresse" required>
+					  </div>
+					  <div class="mb-2">
+						<input type="text" class="form-control" id="Username" name="telephone" aria-describedby="emailHelp"
+						  placeholder="Telephone" required>
+					  </div>
+					  <div class="mb-2">
+						<input type="text" class="form-control" id="Username" name="email" aria-describedby="emailHelp"
+						  placeholder="Email" required>
+					  </div>
+                    <div class="mb-2">
+                      <input type="password" class="form-control" id="password" name="password" placeholder="password" required> 
+                    </div>
+                    <div class="text-center"><button type="submit" class="btn btn-primary mb-2 w-100">Enregistrer</button></div>
+                    <div id="emailHelp" class="form-text text-center mb-2 text-dark">vous avez
+                      un compte ? <a href="http://127.0.0.1:8000/connexion/" class="text-danger fw-bold"> Connectez-vous</a>
+                    </div>
+                    {% if messages %}
+                      <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }} text-danger"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </form>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+          
+{%endblock%}

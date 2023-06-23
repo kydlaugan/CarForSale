@@ -1,0 +1,38 @@
+{% extends "base2.html" %}
+{% load static%}
+{%block content%}
+    <!-- Main Content -->
+	<div class="container-fluid">
+		<div class="row main-content bg-success text-center">
+			<div class="col-md-4 text-center company__info">
+				<span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
+				<h4 class="company_title">CarForSale</h4>
+			</div>
+			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+				<div class="container-fluid">
+					<div class="row">
+						<h2>Bienvenue</h2>
+					</div>
+					<div class="row">
+						<form control="" class="form-group" method="post">
+                            {% csrf_token %}
+							<div class="row">
+								<input type="text" name="nom" id="username" class="form__input" placeholder="Username" required>
+							</div>
+							<div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
+							</div>
+							<div class="row">
+								<input type="submit" value="Connexion" class="btn">
+							</div>
+						</form>
+					</div>
+					<div class="row">
+						<p>vous n'avez  pas de compte ?<a href="http://127.0.0.1:8000/register/" class="text-danger fw-bold"> Enregistrez-vous ici</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ {%endblock%}

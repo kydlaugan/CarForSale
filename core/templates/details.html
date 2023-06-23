@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<title>{% block title %} Liste de véhicules {% endblock%}</title>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+
+<div class="container-fluid mt-4">
+    <div class="row row-cols-1 container">
+        <div class=" col-sm-6">
+
+            <div class="ecommerce-gallery ms-5" data-zoom-effect="true" data-auto-height="true">
+                <div class="row shadow-5 ms-5 img_contenu">
+                    <div class="col-12 mb-1  ">
+                        <div class="lightbox">
+                            <img
+                                src="{{voiture.img1.url}}"
+                                alt="Gallery image 1"
+                                class="w-100 affiche"
+                                id="expandedImg"
+                                />
+                        </div>
+                    </div>
+                </div>
+                <div class="row shadow-5 ms-5 mt-3">
+                    <div class="col-3 img_contenus">
+                        <img
+                            src="{{voiture.img1.url}}"
+                            alt="Gallery image 1"
+                            class=" w-100 h-100 me-2"
+                            onclick="myFunction(this);"
+                            />
+                    </div>
+                    <div class="col-3 img_contenus">
+                        <img
+                            src="{{voiture.img2.url}}"
+                            alt="Gallery image 2"
+                            class="w-100 h-100 me-2"
+                            onclick="myFunction(this);"
+                            />
+                    </div>
+                    <div class="col-3 img_contenus">
+                        <img
+                            src="{{voiture.img3.url}}"
+                            alt="Gallery image 3"
+                            class="w-100 h-100 me-2 "
+                            onclick="myFunction(this);"
+                            />
+                    </div>
+                    <div class="col-3 img_contenus">
+                        <img
+                            src="{{voiture.img4.url}}"
+                            alt="Gallery image 4"
+                            class="w-100 h-100 me-2"
+                            onclick="myFunction(this);"
+                            />
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <h1 class="text-center text-capitalize nom_voiture fw-bold">{{voiture.marque}}</h1>
+            <div class="mt-4">
+
+            
+                 <div class="d-flex justify-content-between">
+                    <span class="infos_2 ">Numero de Chassis</span><span class="infos_voiture">{{voiture.num_chassis}}EF2 6TYG3F 26835177</span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="infos_2">Modele</span><span class="infos_voiture">{{voiture.modele}}</span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="infos_2">Puissance</span><span class="infos_voiture">{{voiture.kilometrage}} km/h</span>
+                  </div>
+                
+                <div class="d-flex justify-content-between">
+                  <span class="infos_2">Carburant</span><span class="infos_voiture">{{voiture.carburant}}</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="infos_2">Etat</span><span class="infos_voiture">{{voiture.etat}} /10</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="infos_2">Puissance</span><span class="infos_voiture">{{voiture.puissance}} chevaux fiscaux</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="infos_2">Telephone</span><span class="infos_voiture"> +237 {{fournisseur.telephone}}</span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between total font-weight-bold mt-4">
+                <span class="infos_2">Prix </span><span class="vitesse text-danger">{{voiture.prix}} CFA</span>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h5 class="text-start nom_voiture fw-bold">Vous Pouvez également aimé</h5>
+
+
+    <section style="background-color: #eee;">
+        <div class="container py-5">
+          <div class="row justify-content-between">
+
+    
+            {% for data in autres_voiture %}
+            <div class="col-md-8 col-lg-6 col-xl-4 mb-5">
+              <div class="card text-black">
+                <img src="{{ data.img1.url }}"
+                  class="card-img-top" alt="Apple Computer"  style="height: 300px; width: 85%;"  />
+                <div class="card-body">
+                  <div class="text-center">
+                    <h5 class="card-title nom_voiture fw-bold"><a href="details/{{data.id}}/" class="text-decoration-none text-dark ">{{ data.marque}}</a> </h5>
+                    <p class="text-success mb-4 vitesse">{{ data.kilometrage}} km/h</p>
+                  </div>
+                  <div>
+                      <div class="d-flex justify-content-between">
+                        <span>Carburant</span><span> {{ data.carburant}}</span>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <span>Etat</span><span>{{ data.etat}} /10</span>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <span>Puissance</span><span>{{ data.puissance}} chevaux</span>
+                      </div>
+                    </div>
+                  <div class="d-flex justify-content-between total font-weight-bold mt-4">
+                      <span>Prix </span><span class="vitesse text-danger">{{ data.prix}} CFA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor%}
+
+            </div>
+        </div>
+      </section>
+
+
+</div>
+
+
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock content %}

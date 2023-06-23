@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<title>{% block title %} Liste de véhicules {% endblock%}</title>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">  
+<link rel="stylesheet" href="{% static 'css/liste.css' %}">  
+
+<h2 class="section_title text-center fw-bold mt-2 text-success text-decoration-underline "> Les Meilleurs véhicules </h2> <br>
+
+  <!-- debut de la zone de recherche -->
+  <div class="container">
+    <div class="container">
+        <form class="container mb-3 me-5" role="search" method="POST" action="recherche">
+          {% csrf_token %}
+            <div class="input-group container  " >
+                <input class="form-control gauche" name="marque" type="search" placeholder="Rechercher une voiture...." aria-label="Search 2 dropdown buttons" style="border:2px solid #283592" >
+                <button class="btn btn-outline-success bg-danger text-light droite " type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--fin de la zone de recherche -->
+
+<section style="background-color: #eee;">
+    <div class="container py-5">
+      <div class="row justify-content-between">
+
+        {% for data in voiture %}
+          <div class="col-md-8 col-lg-6 col-xl-4 mb-5">
+            <div class="card text-black">
+              <img src="{{ data.img1.url }}"
+                class="card-img-top" alt="Apple Computer"  style="height: 300px; width: 85%;"  />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title nom_voiture fw-bold"><a href="details/{{data.id}}/" class="text-decoration-none text-dark ">{{ data.marque}}</a> </h5>
+                  <p class="text-success mb-4 vitesse">{{ data.kilometrage}} km/h</p>
+                </div>
+                <div>
+                    <div class="d-flex justify-content-between">
+                      <span>Carburant</span><span> {{ data.carburant}}</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <span>Etat</span><span>{{ data.etat}} /10</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <span>Puissance</span><span>{{ data.puissance}} chevaux</span>
+                    </div>
+                  </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4">
+                    <span>Prix </span><span class="vitesse text-danger">{{ data.prix}} CFA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor%}
+
+      </div>
+    </div>
+  </section>
+
+  <nav aria-label="Page navigation example">
+	<ul class="pagination justify-content-center">
+		<li class="page-item ">
+			<a class="page-link text-danger">Previous</a>
+		</li>
+		<li class="page-item"><a class="page-link text-danger" href="#">1</a></li>
+		<li class="page-item"><a class="page-link text-danger" href="#">2</a></li>
+		<li class="page-item"><a class="page-link text-danger" href="#">3</a></li>
+		<li class="page-item">
+			<a class="page-link text-danger" href="#">Next</a>
+		</li>
+	</ul>
+</nav>
+
+<script src="{% static 'js/index.js' %}"></script>   
+{% endblock content %}

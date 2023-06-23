@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'police_1';
+    src: url('../police/K22_Lawenta.otf');
+}
+
+@font-face {
+    font-family: 'police_2';
+    src: url('../police/Creepster-Regular.ttf');
+}
+
+*{
+    box-sizing: border-box;
+}
+:root{
+    --PrimaryColor : #FF2626;
+    
+}
+.gauche{
+    border-top-left-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+}
+
+.droite{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+/** titre de l'article**/
+.section_title{
+    text-transform: uppercase;
+    position: relative;
+    font-size: 25px;
+}
+.section_title::before{
+    position: absolute;
+    left: 38%;
+    bottom: 0;
+    content:"";
+    background-color: var(--primary);
+    width: 24%;
+    height: 5px;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -10px;
+}
+.section_title::after{
+    position: absolute;
+    top:0;
+    left: 37%;
+    content:"";
+    background-color: var(--primary);
+    width: 22%;
+    height: 5px;
+    margin-top: -10px;
+    border-radius: 6px;
+}
+.section_title:hover{
+    color: var(--primary);
+    transform:translate(10px);
+    transition: .9s;
+    cursor: pointer;
+}
+
+.nom_voiture{
+    font-family: 'police_1';
+    font-size: 30px;
+}
+
+.vitesse{
+    font-family: 'police_2';
+    font-size: 25px;
+
+}

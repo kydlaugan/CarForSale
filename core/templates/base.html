@@ -1,0 +1,71 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--------bootstraap css-->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">  
+        <link rel="shortcut icon" href="{% static 'image/logo.png'%}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <!--------User css -->
+
+    </head>
+    <body>
+
+        	<!-- Debut NavBar--->
+		<nav class="navbar sticky-top  navbar-expand-lg bg-body-tertiary  ">
+			<div class="container-fluid ">
+				<a class="navbar-brand" href="#"><img src="{% static 'image/logo.png'%}" alt="" style="height:70px"></a>
+				<button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
+					<ul class="navbar-nav ">
+						<li class="nav-item">
+							<a class="nav-link fw-bold text-success" href="/">Acceuil</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link fw-bold text-success" href="liste/">Produits</a>
+						</li>
+					</ul>
+
+					<div class="cache">		
+						<button type="button" class="btn btn-primary btn-sm me-4"><a class="text-light text-decoration-none" href="register/">S'inscrire</a></button>
+						<button type="button" class="btn btn-primary btn-sm"><a class="text-light text-decoration-none" href="connexion/">Se Connecter</a></button>
+					</div>
+				</div>
+
+				<div  id="navbarNavDropdown" class="non_cache"> 		
+					<button type="button" class="btn btn-success btn-sm me-4"><a class="text-light text-decoration-none" href="register/">S'inscrire</a></button>
+					<button type="button" class="btn btn-success btn-sm"><a class="text-light text-decoration-none" href="connexion/">Se Connecter</a></button>
+				</div>
+
+			</div>
+		</nav>
+<!-- Fin NavBar--->
+
+    
+       {% block content %}
+
+       {% endblock content %}
+
+       <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 fw-bold text-success">&copy; 2023 CarForSale, Inc</p>
+      
+          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <img src="{% static 'image/logo.png'%}" alt="" style="height: 80px;">
+          </a>
+      
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="/" class="nav-link px-2 fw-bold text-success">Acceuil</a></li>
+            <li class="nav-item"><a href="liste/" class="nav-link px-2 fw-bold text-success">Produits</a></li>
+          </ul>
+        </footer>
+      </div>
+     <!--------Bootstrap js-->
+     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>   
+    </body>
+</html>
